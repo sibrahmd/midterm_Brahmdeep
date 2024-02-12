@@ -19,17 +19,19 @@ import java.util.Scanner;
  */
 public class Days {
 
-    /**
-     * @param args the command line arguments
-     */
+    public class Days {
+
     public static void main(String[] args) {
-         
-    Scanner in =new Scanner(System.in);
-    System.out.println("Enter the day number (one,two,three,four,five) in string");
-    String code = in.next();
-    Weekdays t= new Weekdays();
-    t.nameOfDay(code); 
-    }// TODO code application logic here
-    
-    
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter the day number (1-7): ");
+        int dayNumber = in.nextInt();
+
+        if (dayNumber >= 1 && dayNumber <= Weekdays.values().length) {
+            Weekdays day = Weekdays.values()[dayNumber - 1];
+            System.out.println("Day name: " + day.getDayName());
+        } else {
+            System.out.println("Invalid day number.");
+        }
+    }
 }
+    
